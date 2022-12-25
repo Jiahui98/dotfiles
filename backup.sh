@@ -3,15 +3,16 @@
 # check to see is git command line installed in this machine
 IS_GIT_AVAILABLE="$(git --version)"
 if [[ $IS_GIT_AVAILABLE == *"version"* ]]; then
-  echo "Git is Available"
+	echo "Git is Available"
 else
-  echo "Git is not installed"
-  exit 1
+	echo "Git is not installed"
+	exit 1
 fi
 
 mkdir .config 2> /dev/null
 
 cp -r $HOME/.config/ranger ./.config
+cp -r $HOME/.scripts .
 
 # copy dot files 
 cp $HOME/{.bashrc,.vimrc,.xinitrc} .
