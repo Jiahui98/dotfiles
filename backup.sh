@@ -11,11 +11,15 @@ fi
 
 mkdir .config 2> /dev/null
 
-cp -r $HOME/.config/ranger ./.config
-cp -r $HOME/.scripts .
+cp -r ~/.config/ranger ./.config
+cp -r ~/.scripts .
 
 # copy dot files 
-cp $HOME/{.bashrc,.vimrc,.xinitrc,.bash_profile} .
+cp ~/{.bashrc,.bash_profile,.vimrc,.xinitrc,.xprofile} .
+
+cp ~/.Xresources .
+cp -r ~/.Xresources.d .
+
 
 # Check git status
 gs="$(git status | grep -i "modified")"

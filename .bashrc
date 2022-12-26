@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 cd $HOME
-neofetch
+#neofetch
 
 source /opt/Dynamatic/init_dhls.sh
 export PATH=$PATH:~/.scripts
