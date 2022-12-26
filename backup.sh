@@ -15,7 +15,7 @@ cp -r $HOME/.config/ranger ./.config
 cp -r $HOME/.scripts .
 
 # copy dot files 
-cp $HOME/{.bashrc,.vimrc,.xinitrc} .
+cp $HOME/{.bashrc,.vimrc,.xinitrc,.bash_profile} .
 
 # Check git status
 gs="$(git status | grep -i "modified")"

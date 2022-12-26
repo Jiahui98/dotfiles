@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 cd $HOME
+neofetch
 
 source /opt/Dynamatic/init_dhls.sh
 export PATH=$PATH:~/.scripts
@@ -42,7 +43,7 @@ alias mv='mv -iv'
 alias cp='cp -iv'
 alias rm='rm -vI'
 alias grep='grep --color=auto'
-alias eda2='ssh jiahxu@ee-tik-eda2.ethz.ch'
+alias eda2='ssh jiahxu@ee-tik-eda2'
 bind 'set show-all-if-ambiguous on'
 bind 'set match-hidden-files off'
 bind 'TAB:menu-complete'
