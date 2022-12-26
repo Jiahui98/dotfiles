@@ -1,0 +1,9 @@
+
+*font: Liberation Mono:pixelsize=49:antialias=true:autohint=true;
+
+!! Transparency (0-1):
+*alpha: 0.8 ;
+*alphaOffset: 0.3 ;
+
+!! Set a default font and font size as below:
+!! st.font: Monospace-11;
