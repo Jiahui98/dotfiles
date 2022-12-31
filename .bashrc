@@ -8,6 +8,7 @@ cd $HOME
 #neofetch
 
 source /opt/Dynamatic/init_dhls.sh
+source /opt/gurobi1000/init_grb.sh
 export PATH=$PATH:~/.scripts
 export PATH=$PATH:/opt/nuXmv-2.0.0-Linux/bin
 export PATH=$PATH:/opt/abc
@@ -44,6 +45,7 @@ alias cp='cp -iv'
 alias rm='rm -vI'
 alias grep='grep --color=auto'
 alias eda2='ssh jiahxu@ee-tik-eda2'
+alias shutdown='shutdown now'
 bind 'set show-all-if-ambiguous on'
 bind 'set match-hidden-files off'
 bind 'TAB:menu-complete'

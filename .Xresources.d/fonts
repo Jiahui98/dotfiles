@@ -1,5 +1,5 @@
 
-*font: Liberation Mono:pixelsize=49:antialias=true:autohint=true;
+*font: Liberation Mono:pixelsize=30:antialias=true:autohint=true;
 
 !! Transparency (0-1):
 *alpha: 0.9 ;
