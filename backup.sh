@@ -13,13 +13,13 @@ mkdir .config 2> /dev/null
 
 cp -r ~/.config/ranger ./.config
 cp -r ~/.scripts .
-cp ~/.bashrc
-cp ~/.bash_profile
-cp ~/.vimrc
-cp ~/.xinitrc
-cp ~/.xprofile
-cp ~/.Xauthority
-cp ~/.fehbg
+cp ~/.bashrc .
+cp ~/.bash_profile .
+cp ~/.vimrc .
+cp ~/.xinitrc .
+cp ~/.xprofile .
+cp ~/.Xauthority .
+cp ~/.fehbg .
 cp ~/.Xresources .
 cp -r ~/.Xresources.d .
 
