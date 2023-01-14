@@ -7,5 +7,6 @@ xrandr --output eDP-1 --mode 1920x1080 &
 [ -f ~/.xprofile ] && . ~/.xprofile
 #(sleep 2 && xcompmgr -c) &
 
-dwmstatus 2>&1 >/dev/null &
-exec dwm
+#dwmstatus 2>&1 >/dev/null &
+~/.scripts/status.sh >/dev/null &
+exec ~/.scripts/startdwm
