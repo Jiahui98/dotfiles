@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# restart dwm without logging out
 while true; do
 	# Log stderror to a file 
 	#dwm 2> ~/.dwm.log

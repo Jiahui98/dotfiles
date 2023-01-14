@@ -1,12 +1,21 @@
 #!/bin/sh
+
+# load Xresources
 [[ -f ~/.Xresources ]] && xrdb -load -I$HOME ~/.Xresources
 
+# my default resolution
 xrandr --output eDP-1 --mode 1920x1080 &
-~/.fehbg &
-#[ -f /etc/xprofile ] && . /etc/xprofile
-[ -f ~/.xprofile ] && . ~/.xprofile
-#(sleep 2 && xcompmgr -c) &
 
-#dwmstatus 2>&1 >/dev/null &
+# set the background
+~/.fehbg &
+
+
+[ -f ~/.xprofile ] && . ~/.xprofile
+
+(sleep 2 && xcompmgr -c) &
+
+# status bar
 ~/.scripts/status.sh >/dev/null &
-exec ~/.scripts/startdwm
+
+# restart dwm without logging out applications
+exec ~/.scripts/startdwm &
