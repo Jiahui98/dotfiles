@@ -20,6 +20,7 @@ export EDITOR=vim
 
 
 # aliases 
+alias sp='sudo pacman'
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias zip='zip -x "*/.*"' # by default not zipping hidden files
 alias ls='ls --color=auto'
