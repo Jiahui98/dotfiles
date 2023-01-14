@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # check to see is git command line installed in this machine
 IS_GIT_AVAILABLE="$(git --version)"
 if [[ $IS_GIT_AVAILABLE == *"version"* ]]; then
@@ -10,20 +9,22 @@ else
 fi
 
 mkdir .config 2> /dev/null
+# copy dot files 
 
 cp -r ~/.config/ranger ./.config
 cp -r ~/.scripts .
-
-# copy dot files 
-cp ~/{.bashrc,.bash_profile,.vimrc,.xinitrc,.xprofile} .
-
+cp ~/.bashrc
+cp ~/.bash_profile
+cp ~/.vimrc
+cp ~/.xinitrc
+cp ~/.xprofile
+cp ~/.Xauthority
+cp ~/.fehbg
 cp ~/.Xresources .
 cp -r ~/.Xresources.d .
 
-
 # Check git status
 gs="$(git status | grep -i "modified")"
-# echo "${gs}"
 
 # If there is a new change
 if [[ $gs == *"modified"* ]]; then
