@@ -18,4 +18,4 @@ xrandr --output eDP-1 --mode 1920x1080 &
 ~/.scripts/status.sh >/dev/null &
 
 # restart dwm without logging out applications
-exec ~/.scripts/startdwm &
+exec ~/.scripts/startdwm

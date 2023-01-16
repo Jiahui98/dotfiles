@@ -33,6 +33,9 @@ getcputemp () {
 	echo -n $(sensors | awk '/Core 0/ {print "🌡" $3}')
 }
 
+getmemory() {
+	free --mebi | sed -n '2{p;q}' | awk '{printf ("🧠%2.2fGiB/%2.2fGiB\n", ( $3 / 1024), ($2 / 1024))}'
+}
 
 getvolumelevel () {
 	vol=$(pactl list sinks | grep '^[[:space:]]Volume:' |\
@@ -93,6 +96,6 @@ getbattery () {
 }
 
 while :; do
-	xsetroot -name "$(getcpuload) | $(getcputemp) | $(getvolumelevel) | $(getwifi) | $(getbattery) | $(getdate)"
+	xsetroot -name "| $(getmemory) | $(getcpuload) | $(getcputemp) | $(getvolumelevel) | $(getwifi) | $(getbattery) | $(getdate)"
 	sleep 1
 done
