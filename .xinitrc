@@ -19,5 +19,9 @@ xset -b
 # status bar
 ~/.scripts/status.sh >/dev/null &
 
+# Decrease key repeat delay to 300ms and increase key repeat rate to 50 per second.
+xset r rate 300 50
+
 # restart dwm without logging out applications
-exec ~/.scripts/startdwm
+#exec ~/.scripts/startdwm
+exec dwm

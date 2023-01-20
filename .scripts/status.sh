@@ -1,5 +1,7 @@
 #/bin/sh
 
+# My status bar
+
 getcpuload() {
 	cache=/tmp/cpubarscache
 	# id total idle
