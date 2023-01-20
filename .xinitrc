@@ -3,8 +3,12 @@
 # load Xresources
 [[ -f ~/.Xresources ]] && xrdb -load -I$HOME ~/.Xresources
 
-# my default resolution
-#xrandr --output eDP-1 --mode 1920x1080 &
+
+# set the default resolution for all screens
+default_resolution='1920x1080'
+xrandr -q | grep -E ' connected' | awk '{print $1}' | while read line; do
+	xrandr --output $line --mode $default_resolution
+done
 
 # set the background
 ~/.fehbg &
@@ -23,5 +27,5 @@ xset -b
 xset r rate 300 50
 
 # restart dwm without logging out applications
-#exec ~/.scripts/startdwm
-exec dwm
+exec ~/.scripts/startdwm
+#exec dwm
