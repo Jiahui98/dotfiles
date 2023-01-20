@@ -18,8 +18,6 @@ cp ~/.bash_profile .
 cp ~/.vimrc .
 cp ~/.xinitrc .
 cp ~/.xprofile .
-cp ~/.Xauthority .
-cp ~/.fehbg .
 cp ~/.Xresources .
 cp -r ~/.Xresources.d .
 

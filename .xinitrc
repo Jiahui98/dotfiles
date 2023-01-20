@@ -4,13 +4,15 @@
 [[ -f ~/.Xresources ]] && xrdb -load -I$HOME ~/.Xresources
 
 # my default resolution
-xrandr --output eDP-1 --mode 1920x1080 &
+#xrandr --output eDP-1 --mode 1920x1080 &
 
 # set the background
 ~/.fehbg &
 
-
 [ -f ~/.xprofile ] && . ~/.xprofile
+
+# disable beep sound
+xset -b
 
 (sleep 2 && xcompmgr -c) &
 

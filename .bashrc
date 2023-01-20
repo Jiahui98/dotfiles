@@ -4,23 +4,34 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-cd $HOME
+#cd $HOME
 #neofetch
 
+set -o vi
+function run {
+	[ -x ./main.sh ] &&  ./main.sh 2>&1 | tee ./output.log 
+	[ -x ./run.py ] && ./run.py 2>&1 | tee ./output.log
+}
+
 source /opt/Dynamatic/init_dhls.sh
-source /opt/gurobi1000/init_grb.sh
+source ~/Repositories/dot2smv/init_dot2smv.sh
+#source /opt/gurobi1000/init_grb.sh
 export PATH=$PATH:~/.scripts
 export PATH=$PATH:/opt/nuXmv-2.0.0-Linux/bin
 export PATH=$PATH:/opt/abc
 
+#export PATH=$PATH:/opt/intelFPGA/20.1/modelsim_ase/bin
+
+
 export LD_LIBRARY_PATH=/usr/lib64:/usr/local/lib:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+
+
 
 export EDITOR=vim
 
 
 # aliases 
-alias sp='sudo pacman'
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias zip='zip -x "*/.*"' # by default not zipping hidden files
 alias ls='ls --color=auto'

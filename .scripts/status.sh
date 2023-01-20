@@ -30,12 +30,9 @@ getcpuload() {
 }
 
 getcputemp () {
-	echo -n $(sensors | awk '/Core 0/ {print "🌡" $3}')
+	echo -n $(sensors | awk '/(CPU|Core 0)/ {print "🌡" $3}')
 }
 
-getmemory() {
-	free --mebi | sed -n '2{p;q}' | awk '{printf ("🧠%2.2fGiB/%2.2fGiB\n", ( $3 / 1024), ($2 / 1024))}'
-}
 
 getvolumelevel () {
 	vol=$(pactl list sinks | grep '^[[:space:]]Volume:' |\
@@ -44,23 +41,24 @@ getvolumelevel () {
 		$((vol >= 70)) ) icon="🔊" ;;
 		$((vol >= 30)) ) icon="🔉" ;;
 		$((vol >= 1)) ) icon="🔈" ;;
-		* ) echo 🔇 && exit ;;
+		* ) echo -n 🔇 && exit ;;
 	esac
 	echo -n "$icon$vol%"
 }
 
 getwifi () {
+	# Show wifi 📶 and percent strength or 📡 if none.
+	# Show 🌐 if connected to ethernet or ❎ if none.
+	# Show 🔒 if a vpn connection is active
 	if grep -xq 'up' /sys/class/net/w*/operstate 2>/dev/null ; then
 		wifiicon="$(awk '/^\s*w/ { print "📶", int($3 * 100 / 70) "% " }' /proc/net/wireless)"
 	elif grep -xq 'down' /sys/class/net/w*/operstate 2>/dev/null ; then
 		grep -xq '0x1003' /sys/class/net/w*/flags && wifiicon="📡 " || wifiicon="❌ "
 	fi
-	# Show wifi 📶 and percent strength or 📡 if none.
-	# Show 🌐 if connected to ethernet or ❎ if none.
-	# Show 🔒 if a vpn connection is active
+	#
 	echo -n "$wifiicon"\
-		"$(sed "s/down/❎/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)"\
-		"$(sed "s/.*/🔒/" /sys/class/net/tun*/operstate 2>/dev/null)"
+		#"$(sed "s/down/❎/;s/up/🌐/" /sys/class/net/e*/operstate)"
+		#"$(sed "s/.*/🔒/" /sys/class/net/tun*/operstate 2>/dev/null)"
 }
 
 # get time date
@@ -96,6 +94,6 @@ getbattery () {
 }
 
 while :; do
-	xsetroot -name "| $(getmemory) | $(getcpuload) | $(getcputemp) | $(getvolumelevel) | $(getwifi) | $(getbattery) | $(getdate)"
+	xsetroot -name "$(getcpuload) | $(getcputemp) | $(getvolumelevel) | $(getwifi) | $(getbattery) | $(getdate)"
 	sleep 1
 done
