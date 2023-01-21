@@ -1,35 +1,26 @@
-#
-# ~/.bashrc
-#
+#!/bin/bash
 
-# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-#cd $HOME
-#neofetch
 
 set -o vi
-function run {
-	[ -x ./main.sh ] &&  ./main.sh 2>&1 | tee ./output.log 
-	[ -x ./run.py ] && ./run.py 2>&1 | tee ./output.log
-}
 
+export PATH=$PATH:~/.scripts
+
+# ETH Stuff
 source /opt/Dynamatic/init_dhls.sh
 source ~/Repositories/dot2smv/init_dot2smv.sh
-#source /opt/gurobi1000/init_grb.sh
-export PATH=$PATH:~/.scripts
 export PATH=$PATH:/opt/nuXmv-2.0.0-Linux/bin
 export PATH=$PATH:/opt/abc
-
-#export PATH=$PATH:/opt/intelFPGA/20.1/modelsim_ase/bin
-
 
 export LD_LIBRARY_PATH=/usr/lib64:/usr/local/lib:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 
-
-
 export EDITOR=vim
 
+function run {
+	[ -x ./main.sh ] &&  ./main.sh 2>&1 | tee ./output.log 
+	[ -x ./run.py ] && ./run.py 2>&1 | tee ./output.log
+}
 
 # aliases 
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
@@ -58,10 +49,23 @@ alias rm='rm -vI'
 alias grep='grep --color=auto'
 alias eda2='ssh jiahxu@ee-tik-eda2'
 alias shutdown='shutdown now'
+
+# dotfiles backup
+
+alias config='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=$HOME'
+source /usr/share/bash-completion/completions/git
+__git_complete config __git_main
+
+# 
+
 bind 'set show-all-if-ambiguous on'
 bind 'set match-hidden-files off'
 bind 'TAB:menu-complete'
 
+# 
+
+
 #PS1='[\u@\h \W]\$ '
+# My shell prompt
 export PS1="[\[$(tput sgr0)\]\[\033[38;5;208m\]\u\[$(tput sgr0)\]\[\033[38;5;99m\]@\[$(tput sgr0)\]\[\033[38;5;63m\]\h\[$(tput sgr0)\]\[\033[38;5;133m\] \[$(tput sgr0)\]\[\033[38;5;72m\]\W\[$(tput sgr0)\]]\\$ \[$(tput sgr0)\]"
 

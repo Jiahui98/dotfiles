@@ -1,6 +1,5 @@
 
-!*font: UbuntuMono-R:pixelsize=23:antialias=true:autohint=true;
-*font: UbuntuMono-R:pixelsize=23:antialias=true:autohint=true;
+*font: UbuntuMono-RI:pixelsize=24:antialias=true:autohint=true;
 
 !! Transparency (0-1):
 *alpha: 0.9 ;

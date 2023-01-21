@@ -4,20 +4,29 @@ autocmd BufReadPost *
 	\   exe "normal! g`\"" |
 	\ endif
 
-"colorscheme
-colorscheme default
-
 "inoremap jj <Esc> 
 fixdel
+
+"set length of a tab
 set tabstop=6
+
+"set the shift width
 set shiftwidth=6
+
+"automatic indent
 set autoindent
+
+"automatic indent
 set noexpandtab
+
+"enable syntax highlighting"
 syntax on
-"set clipboard+=unnamedplus
 
 "disable ex mode"
 map Q <Nop>
+
+"colorscheme
+colorscheme default
 
 "show the indentation line (note: there is a space in the end)
 set list lcs=tab:\|\ 
@@ -39,20 +48,3 @@ set hlsearch
 inoremap { {}<Esc>ha
 inoremap ( ()<Esc>ha
 inoremap [ []<Esc>ha
-
-"jump between the guides
-"noremap <Space><Space> <Esc>/<++><Enter>"_c4l
-"vnoremap <Space><Space> <Esc>/<++><Enter>"_c4l
-"map <Space><Space> <Esc>/<++><Enter>"_c4l
-
-"====== Latex ======"
-
-"au BufWritePost *.tex make
-
-
-" Compile document
-	"map <leader>c :w! \| !compiler <c-r>%<CR><CR>
-
-"autocmd FileType tex inoremap ;fr \begin{frame}<Enter>\frametitle{}<Enter><Enter><++><Enter><Enter>\end{frame}<Enter><Enter><++><Esc>6kf}i
-
-"====== END ========"

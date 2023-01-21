@@ -1,4 +1,6 @@
 #!/bin/bash
+
+
 # check to see is git command line installed in this machine
 IS_GIT_AVAILABLE="$(git --version)"
 if [[ $IS_GIT_AVAILABLE == *"version"* ]]; then
@@ -9,8 +11,8 @@ else
 fi
 
 mkdir .config 2> /dev/null
-# copy dot files 
 
+# copy dot files 
 cp -r ~/.config/ranger ./.config
 cp -r ~/.scripts .
 cp ~/.bashrc .
