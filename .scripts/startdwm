@@ -8,5 +8,5 @@
 #	dwm >/dev/null 2>&1
 #done
 
-while type dwm >/dev/null ; do dwm && continue || break ; done
+while type dwm >/dev/null ; do dwm 2> ~/.cache/dwm.log && continue || break ; done
 

@@ -2,3 +2,5 @@
 #include ".Xresources.d/fonts"
 #include ".Xresources.d/dwm-config"
 
+
+*font: monospace:size=10
