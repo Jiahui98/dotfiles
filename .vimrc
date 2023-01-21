@@ -48,3 +48,6 @@ set hlsearch
 inoremap { {}<Esc>ha
 inoremap ( ()<Esc>ha
 inoremap [ []<Esc>ha
+
+
+set clipboard=unnamedplus

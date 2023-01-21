@@ -7,7 +7,13 @@ dwm.dmenufont:UbuntuMono-R:size=15
 !dwm.selbgcolor:#BD93F9
 !dwm.selbordercolor:#FF79C6
 !dwm.selfgcolor:#8BE9FD
-dwm.borderpx:2
+dwm.normbgcolor:#000000
+dwm.normbordercolor:#000000
+dwm.normfgcolor:#EEEEEE
+dwm.selbgcolor:#B2C733
+dwm.selbordercolor:#924B9A
+dwm.selfgcolor:#000000
+dwm.borderpx:3
 dwm.snap:32
 dwm.showbar:1
 dwm.topbar:1
@@ -16,9 +22,3 @@ dwm.nmaster:1
 dwm.resizehints:0
 
 
-dwm.normbgcolor:#000000
-dwm.normbordercolor:#000000
-dwm.normfgcolor:#EEEEEE
-dwm.selbgcolor:#B2C733
-dwm.selbordercolor:#924B9A
-dwm.selfgcolor:#000000

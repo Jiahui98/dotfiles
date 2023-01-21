@@ -50,12 +50,6 @@ alias grep='grep --color=auto'
 alias eda2='ssh jiahxu@ee-tik-eda2'
 alias shutdown='shutdown now'
 
-# dotfiles backup
-
-alias config='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=$HOME'
-source /usr/share/bash-completion/completions/git
-__git_complete config __git_main
-
 # 
 
 bind 'set show-all-if-ambiguous on'
