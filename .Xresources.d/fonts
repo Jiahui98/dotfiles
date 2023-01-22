@@ -1,10 +1,5 @@
+st*font:Ubuntu Mono:style=Regular:pixelsize=25:antialias=true:autohint=true
+st*font2:Noto Color Emoji:style=regular:pixelsize=25:fontsize=25:antialias=true:autohint=true
 
-!*font: UbuntuMono-RI:pixelsize=24:antialias=true:autohint=true;
-st.font: UbuntuMono-RI:pixelsize=30:antialias=true:autohint=true
-
-!! Transparency (0-1):
 *alpha: 0.9 ;
 !*alphaOffset: 0.3 ;
-
-!! Set a default font and font size as below:
-!! st.font: Monospace-11;

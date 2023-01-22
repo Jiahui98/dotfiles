@@ -96,6 +96,6 @@ getbattery () {
 }
 
 while :; do
-	xsetroot -name "$(getcpuload) | $(getcputemp) | $(getvolumelevel) | $(getwifi) | $(getbattery) | $(getdate)"
+	xsetroot -name " $(getcpuload) | $(getcputemp) | $(getvolumelevel) | $(getwifi) | $(getbattery) | $(getdate) "
 	sleep 1
 done
